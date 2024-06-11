@@ -1,13 +1,11 @@
 # Soccer Tournament Dashboard
 I am making this project for my hiring process
 
-# Goal to Achieve
-Problem statement is:
-> Assume that soccer knockout league is being played. Now it should have information about the teams, team players and the grounds the match is being played at. 
+## Goal to Achieve
+### Problem statement is:
+> Assume that soccer knockout league is being played. Now it should have information about the teams, team players and the grounds the match is being played at.<br/> Now the scheduling of matches between the teams in their respective grounds has to be visualized.
 
-> Now the scheduling of matches between the teams in their respective grounds has to be visualized.
-
-Goals:
+### Goals:
 
 - Make a Dashboard containing:
     - individual players' performance (including their stats)
@@ -23,4 +21,11 @@ Goals:
 	-	which player had most assists
 	-	which player had the best defence
 
-	
+# Development Notes
+> [!NOTE]
+> I am using the [UEFA Champions League](https://www.uefa.com/uefachampionsleague/fixtures-results/) as a reference.
+
+### Tools Used
+
+The Dashboard is entirely on React as described and here are other libraries I used along for productivity and effeciency.
+ 
