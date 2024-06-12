@@ -27,3 +27,7 @@ I am making this project for my hiring process
 The Dashboard is entirely on React as described and here are other libraries I used along for productivity and effeciency.
  - Material UI
  - NevoCharts
+
+I have also created dark/light theme using Material UI.
+I have added bar and line charts
+Made some cards in Material UI
