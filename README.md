@@ -22,10 +22,8 @@ I am making this project for my hiring process
 	-	which player had the best defence
 
 # Development Notes
-> [!NOTE]
-> I am using the [UEFA Champions League](https://www.uefa.com/uefachampionsleague/fixtures-results/) as a reference.
-
 ### Tools Used
 
 The Dashboard is entirely on React as described and here are other libraries I used along for productivity and effeciency.
- 
+ - Material UI
+ - NevoCharts
