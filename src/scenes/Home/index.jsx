@@ -1,8 +1,9 @@
 import React from 'react'
+import { JumboTron } from '../global/JumboTron'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <JumboTron />
   )
 }
 

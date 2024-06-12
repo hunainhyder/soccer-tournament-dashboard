@@ -9,7 +9,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
   padding: theme.spacing(2),
   boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
   borderRadius: 12,
-  backgroundColor: '#f9f9f9',
+  backgroundColor: 'secondary',
 }));
 
 const TeamAvatar = styled(Avatar)(({ theme }) => ({
@@ -24,7 +24,7 @@ const StatBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(1),
   minWidth: 80,
   borderRadius: 8,
-  backgroundColor: '#ffffff',
+  backgroundColor: 'primary',
   boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
 }));
 
@@ -42,7 +42,7 @@ const TeamStatsCard = ({ team }) => {
               <Typography variant="h1" component="div">
                 {team.name}
               </Typography>
-              <Typography variant="body2" color="primary">
+              <Typography variant="body2">
                 Matches Played: {team.matches}
               </Typography>
             </Grid>
@@ -52,7 +52,7 @@ const TeamStatsCard = ({ team }) => {
               <Grid item>
                 <StatBox>
                   <Typography variant="h6">{team.won}</Typography>
-                  <Typography variant="body2" color="primary">
+                  <Typography variant="body2">
                     Wins
                   </Typography>
                 </StatBox>
@@ -60,7 +60,7 @@ const TeamStatsCard = ({ team }) => {
               <Grid item>
                 <StatBox>
                   <Typography variant="h6">{team.drawn}</Typography>
-                  <Typography variant="body2" color="primary">
+                  <Typography variant="body2">
                     Draws
                   </Typography>
                 </StatBox>
@@ -68,15 +68,15 @@ const TeamStatsCard = ({ team }) => {
               <Grid item>
                 <StatBox>
                   <Typography variant="h6">{team.lost}</Typography>
-                  <Typography variant="body2" color="primary">
+                  <Typography variant="body2">
                     Losses
                   </Typography>
                 </StatBox>
               </Grid>
               <Grid item>
                 <StatBox>
-                  <Typography variant="h6">{team.won * 2}</Typography>
-                  <Typography variant="body2" color="primary">
+                  <Typography variant="h6">{team.won * 2 + team.drawn}</Typography>
+                  <Typography variant="body2">
                     Points
                   </Typography>
                 </StatBox>
@@ -90,7 +90,7 @@ const TeamStatsCard = ({ team }) => {
   );
 };
 
-const App = () => (
+const Teams = () => (
   <Grid container>
     {teamsData.map((team) => {
         return <Grid item sm={12}>
@@ -100,4 +100,4 @@ const App = () => (
   </Grid>
 );
 
-export default App;
+export default Teams;

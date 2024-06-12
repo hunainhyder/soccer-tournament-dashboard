@@ -1,6 +1,20 @@
 let teamsData = [
     {
         id: '001',
+        image: 'https://img.uefa.com/imgml/TP/teams/logos/140x140/50051.png',
+        name: 'Real Madrid',
+        matches: 13,
+        won: 9, 
+        lost: 0,
+        drawn: 4,
+        goals: 28,
+        conceded: 15,
+        yellow: 22,
+        red: 0,
+        squad: ['A11', 'A12', 'A13', 'A14', 'A15']
+    },
+    {
+        id: '002',
         image: 'https://img.uefa.com/imgml/TP/teams/logos/140x140/52280.png',
         name: 'Arsenal FC',
         matches: 10,
@@ -14,7 +28,7 @@ let teamsData = [
         squad: ['A1', 'A2', 'A3', 'A4', 'A5']
     },
     {
-        id: '002',
+        id: '003',
         image: 'https://img.uefa.com/imgml/TP/teams/logos/140x140/50037.png',
         name: 'Bayern München',
         matches: 12,
@@ -26,20 +40,6 @@ let teamsData = [
         yellow: 16,
         red: 1,
         squad: ['A6', 'A7', 'A8', 'A9', 'A10']
-    },
-    {
-        id: '003',
-        image: 'https://img.uefa.com/imgml/TP/teams/logos/140x140/50051.png',
-        name: 'Real Madrid CF',
-        matches: 13,
-        won: 9, 
-        lost: 0,
-        drawn: 4,
-        goals: 28,
-        conceded: 15,
-        yellow: 22,
-        red: 0,
-        squad: ['A11', 'A12', 'A13', 'A14', 'A15']
     }
 ]
 

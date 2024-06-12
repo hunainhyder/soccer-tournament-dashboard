@@ -9,7 +9,8 @@ import { Stats } from './scenes/Stats/Stats';
 import { Groups } from './scenes/Groups/Groups';
 import  { ColorModeContext, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material'; 
-
+import { JumboTron } from './scenes/global/JumboTron';
+import Footer from './scenes/global/Footer';
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -30,6 +31,7 @@ function App() {
               <Route path="/teams" element={<Teams />} />
               <Route path="/players" element={<Players />} />
             </Routes>
+            <Footer />
           </main>
         </div>
       </ThemeProvider>
