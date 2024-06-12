@@ -1,65 +1,103 @@
-// import { Box, Typography, useTheme } from "@mui/material";
-// import { DataGrid } from "@mui/x-data-grid";
-// import { tokens } from '../../theme'
-// import { teamsData } from '../../data/teamsData'
-
 import React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import { makeStyles } from '@mui/styles';
+import { Card, CardContent, Typography, Avatar, Grid, Box } from '@mui/material';
+import { styled } from '@mui/system';
+import teamsData from '../../data/teamsData';
 
+const StyledCard = styled(Card)(({ theme }) => ({
+  maxWidth: '80%',
+  margin: '20px auto',
+  padding: theme.spacing(2),
+  boxShadow: '0px 10px 20px rgba(0, 0, 0, 0.1)',
+  borderRadius: 12,
+  backgroundColor: '#f9f9f9',
+}));
 
-const useStyles = makeStyles({
-  card: {
-    minWidth: 275,
-    maxWidth: 400,
-    margin: 'auto',
-    marginBottom: 20,
-    borderRadius: '10px',
-    overflow: 'hidden',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.3s ease-in-out',
-    '&:hover': {
-      transform: 'scale(1.05)',
-      boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-    },
-  },
-  gradientBackground: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: 'white',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+const TeamAvatar = styled(Avatar)(({ theme }) => ({
+  width: theme.spacing(10),
+  height: theme.spacing(10),
+  marginBottom: theme.spacing(2),
+  boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)',
+}));
 
-const PlayerCard = ({ player }) => {
-  const classes = useStyles();
-  const { name, position, nationality, goals, assists } = player;
+const StatBox = styled(Box)(({ theme }) => ({
+  textAlign: 'center',
+  padding: theme.spacing(1),
+  minWidth: 80,
+  borderRadius: 8,
+  backgroundColor: '#ffffff',
+  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
+}));
 
+const TeamStatsCard = ({ team }) => {
   return (
-    <Card className={`${classes.card} ${classes.gradientBackground}`}>
-      <CardContent>
-        <Typography className={classes.title} gutterBottom>
-          {name}
-        </Typography>
-        <Typography className={classes.pos} color="inherit">
-          {position} | {nationality}
-        </Typography>
-        <Typography variant="body2" component="p" color="inherit">
-          Goals: {goals}
-        </Typography>
-        <Typography variant="body2" component="p" color="inherit">
-          Assists: {assists}
-        </Typography>
+    <StyledCard>
+      <CardContent style={{ textAlign: 'center' }}>
+        <Grid container spacing={2} alignItems="center" direction="row">
+          <Grid container sm={5}>
+            <Grid item>
+              <TeamAvatar alt={team.name} src={team.image} />
+            </Grid>
+            <br />
+            <Grid item>
+              <Typography variant="h1" component="div">
+                {team.name}
+              </Typography>
+              <Typography variant="body2" color="primary">
+                Matches Played: {team.matches}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid container sm={7}>
+            <Grid item container spacing={2} justifyContent="center">
+              <Grid item>
+                <StatBox>
+                  <Typography variant="h6">{team.won}</Typography>
+                  <Typography variant="body2" color="primary">
+                    Wins
+                  </Typography>
+                </StatBox>
+              </Grid>
+              <Grid item>
+                <StatBox>
+                  <Typography variant="h6">{team.drawn}</Typography>
+                  <Typography variant="body2" color="primary">
+                    Draws
+                  </Typography>
+                </StatBox>
+              </Grid>
+              <Grid item>
+                <StatBox>
+                  <Typography variant="h6">{team.lost}</Typography>
+                  <Typography variant="body2" color="primary">
+                    Losses
+                  </Typography>
+                </StatBox>
+              </Grid>
+              <Grid item>
+                <StatBox>
+                  <Typography variant="h6">{team.won * 2}</Typography>
+                  <Typography variant="body2" color="primary">
+                    Points
+                  </Typography>
+                </StatBox>
+              </Grid>
+            </Grid>
+          </Grid>
+          
+        </Grid>
       </CardContent>
-    </Card>
+    </StyledCard>
   );
 };
 
-export default PlayerCard;
+const App = () => (
+  <Grid container>
+    {teamsData.map((team) => {
+        return <Grid item sm={12}>
+            <TeamStatsCard key={team.id} team={team} />
+        </Grid>
+    })}
+  </Grid>
+);
+
+export default App;

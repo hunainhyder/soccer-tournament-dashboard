@@ -1,16 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
-import Dashboard from './scenes/dashboard';
+import Home from './scenes/Home';
 import NavBar from './scenes/global/NavBar';
-import TopBar from './scenes/global/TopBar';
-// import Matches from './scenes/Matches';
-// import Teams from './scenes/Teams';
-// import Players from './scenes/Players';
-// import Stats from './scenes/Stats';
-// import Groups from './scenes/Groups';
+import TopBar from './scenes/global/Topbar';
+import { Matches } from './scenes/Matches/Matches';
+import Teams from './scenes/Teams/Teams';
+import { Players } from './scenes/Players/Players';
+import { Stats } from './scenes/Stats/Stats';
+import { Groups } from './scenes/Groups/Groups';
 import  { ColorModeContext, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material'; 
-import PlayerCard from './scenes/Teams/Teams';
-import playerData from './data/playersData'
+
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -23,15 +22,14 @@ function App() {
           <main className='content'>
             <TopBar />
             <NavBar />
-            <PlayerCard player={playerData[0]} />
-            {/* <Routes> */}
-              {/* <Route path="/" element={<Dashboard />} /> */}
-              {/* <Route path="/matches" element={<Matches />} /> */}
-              {/* <Route path="/groups" element={<Groups />} /> */}
-              {/* <Route path="/stats" element={<Stats />} /> */}
-              {/* <Route path="/teams" element={<Teams />} /> */}
-              {/* <Route path="/players" element={<Players />} /> */}
-            {/* </Routes> */}
+            <Routes> 
+              <Route path="/" element={<Home />} />
+              <Route path="/matches" element={<Matches />} />
+              <Route path="/groups" element={<Groups />} />
+              <Route path="/stats" element={<Stats />} />
+              <Route path="/teams" element={<Teams />} />
+              <Route path="/players" element={<Players />} />
+            </Routes>
           </main>
         </div>
       </ThemeProvider>

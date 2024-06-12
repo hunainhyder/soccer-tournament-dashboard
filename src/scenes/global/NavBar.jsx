@@ -1,7 +1,10 @@
-import { AppBar, IconButton, Toolbar, Typography, Stack, Button } from "@mui/material"
+import { AppBar, IconButton, Toolbar, Typography, Stack, Button, Divider } from "@mui/material"
 import { CatchingPokemonTwoTone } from "@mui/icons-material"
+import { Link } from "react-router-dom"
 
 const SideBar = () => {
+  let buttonStyleClass = "css-pmncfm-MuiButtonBase-root-MuiButton-root";
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -12,12 +15,36 @@ const SideBar = () => {
           Champions League
         </Typography>
         <Stack direction='row' spacing={2}>
-          <Button color='inherit'>Home</Button>
-          <Button color='inherit'>Matches</Button>
-          <Button color='inherit'>Group</Button>
-          <Button color='inherit'>Stats</Button>
-          <Button color='inherit'>Teams</Button>
-          <Button color='inherit'>Players</Button>
+          <Link to="/" className={buttonStyleClass}>
+            <Button color='inherit' className={buttonStyleClass}>
+              Home
+            </Button>
+          </Link>
+          <Link to="/matches" className={buttonStyleClass}>
+            <Button color='inherit' className={buttonStyleClass}>
+              Matches
+            </Button>
+          </Link>
+          <Link to="/groups" className={buttonStyleClass}>
+            <Button color='inherit'>
+              Group
+            </Button>
+          </Link>
+          <Link to="/stats" className={buttonStyleClass}>
+            <Button color='inherit'>
+              Stats
+            </Button>
+          </Link>
+          <Link to="/teams" className={buttonStyleClass}>
+            <Button color='inherit'>
+              Teams
+            </Button>
+          </Link>
+          <Link to="/players" className={buttonStyleClass}>
+            <Button color='inherit'>
+              Players
+            </Button>
+          </Link>
         </Stack>
       </Toolbar>
     </AppBar>
